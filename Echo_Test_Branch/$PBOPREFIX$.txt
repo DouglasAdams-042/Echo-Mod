@@ -1,0 +1,6 @@
+﻿//<'Echo_Retexture_mod.pbo' properties via Mikero's dos tools, dll version 7.46>
+prefix=Echo_Retexture_mod;
+Mikero=DePbo.dll.7.46;
+version=Sun May 17 16:08:09 2020;
+PboType=Arma Addon;
+//</properties>
