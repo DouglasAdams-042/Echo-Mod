@@ -44,6 +44,7 @@ class cfgWeapons{
 // V_FZ_Armor\Data\Helmets\V_CH252_SLV_V_CO.paa (Polarised Marine)
     class VES_CH252_MAR_Light;
 	class LM_OPCAN_CH252_AR_T;
+	class LM_OPCAN_CH252_AR_W;
 	class OPTRE_UNSC_PatrolCap_Army;
     class VES_CH252_MAR_Vacuum;
       class VES_CH252_MAR_Vacuum_dp; // needed. "DePolarized"
@@ -61,7 +62,7 @@ class cfgWeapons{
             hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_H_MacTavish_Woodland_co", ""};
         };
     }; 
-    class ETB_Base_TST_CH252: VES_CH252_MAR_Light
+	class ETB_Base_TST_CH252: VES_CH252_MAR_Light
     {
         dlc="EchoTB";
         scope = 2;
@@ -73,7 +74,6 @@ class cfgWeapons{
             hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_T_co.paa", ""};
         };
     }; 
-	//End One helmet
 	class ETB_Patrol_Cap_MCAM_B: OPTRE_UNSC_PatrolCap_Army
     {
         dlc = "EchoTB";
@@ -104,7 +104,7 @@ class cfgWeapons{
             };
         };
     };
-    class ETB_VAC_TST_CH252_dp: VES_CH252_MAR_Vacuum_dp
+	class ETB_VAC_TST_CH252_dp: VES_CH252_MAR_Vacuum_dp
     {
         dlc="EchoTB";
         author="MacTavish and Vespade";
@@ -123,16 +123,28 @@ class cfgWeapons{
             };
         };
     };
-	class ETB_Army_TST_CH252: VES_CH252_MAR_Light
+	class ETB_Army_TST_T_CH252: LM_OPCAN_CH252_AR_T
     {
         dlc="EchoTB";
         scope = 2;
-        author="Barais and Vespade";
+        author="Barais and OPCAN";
         displayName="[ETB] CH252 (Barais)(Test)";
         hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_Thomas_H_co.paa", ""};
         class ItemInfo: ItemInfo
         {
-            hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_Thomas_H_paa", ""};
+            hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_Thomas_H_co.paa", ""};
+        };
+    }; 
+	class ETB_Army_TST_WDL_CH252: LM_OPCAN_CH252_AR_W
+    {
+        dlc="EchoTB";
+        scope = 2;
+        author="Barais and OPCAN";
+        displayName="[ETB] CH252 (Barais)(Test)";
+        hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_Thomas_H_WDL_co.paa", ""};
+        class ItemInfo: ItemInfo
+        {
+            hiddenSelectionsTextures[]={"Echo_Test_Branch\Data\Headgear\ETB_Thomas_H_WDL_co.paa", ""};
         };
     }; 
 };//CfgWeapons
