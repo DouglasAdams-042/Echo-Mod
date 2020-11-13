@@ -65,6 +65,37 @@ switch true do {
 		_veh attachTo [_pelican,[0,-4.6,.30]];
 		_loaded = true;
 	};
+	//Anything lower will likely cause clipping
+	case (_veh isKindOf "Echo_M660"):
+	{
+		_veh attachTo [_pelican,[0,-5.0,0.30]];
+		_loaded = true;
+	};
+	case (_veh isKindOf "Echo_Cougar"):
+	{
+		_veh attachTo [_pelican,[0,-3.6,0.30]];
+		_loaded = true;
+	};
+	case (_veh isKindOf "Echo_Falcon_Unarmed"):
+	{
+		_veh attachTo [_pelican,[0,-5,-0.8]];
+		_loaded = true;
+	};
+	case (_veh isKindOf "Echo_Falcon_Armed"):
+	{
+		_veh attachTo [_pelican,[0,-5,-0.8]];
+		_loaded = true;
+	};
+	case (_veh isKindOf "Echo_Falcon_Unarmed_Turrets"):
+	{
+		_veh attachTo [_pelican,[0,-5,-0.8]];
+		_loaded = true;
+	};
+	case (_veh isKindOf "Echo_Falcon_Armed_Turrets"):
+	{
+		_veh attachTo [_pelican,[0,-5,-0.8]];
+		_loaded = true;
+	};
 };
 
 if (_loaded) then
