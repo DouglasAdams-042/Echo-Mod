@@ -1,2 +1,2 @@
 # Echo-Mod
- Echo Test Branch and Echo Arsenal mod dev
+ Echo Company Armory mod development
