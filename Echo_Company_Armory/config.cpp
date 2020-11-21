@@ -13724,7 +13724,7 @@ class CfgVehicles
 				textures[]=
 				{
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_Body.paa",
-					"Echo_Company_Armory\data\Vehicles\Scorpion\Decals_Army.paa",
+					"Echo_Company_Armory\data\Vehicles\Misc\Decals_Army.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_int.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_parts.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_tracks.paa",
@@ -13744,7 +13744,7 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_Body.paa",
-			"Echo_Company_Armory\data\Vehicles\Scorpion\Decals_Army.paa",
+			"Echo_Company_Armory\data\Vehicles\Misc\Decals_Army.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_int.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_parts.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_tracks.paa",
