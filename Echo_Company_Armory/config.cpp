@@ -1187,7 +1187,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Air\Air\Echo_VX16_Roland_T_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_T_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_S: OPTRE_UNSC_VX16_Helmet
@@ -14179,7 +14179,7 @@ class CfgVehicles
 	class B_APC_Tracked_01_CRV_F;
 	class FlagCarrier;
 	class EventHandlers;
-	
+
 	class Echo_Cougar: I_E_APC_tracked_03_cannon_F
 	{
 		dlc="Echo Company Armory";
