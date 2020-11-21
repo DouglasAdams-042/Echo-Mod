@@ -21,6 +21,8 @@ class cfgPatches
 			"Echo_Rucksack_Soft_WDL",
 			"Echo_Rucksack_Soft_Medical_WDL",
 			"Echo_Rucksack_Soft_Heavy_WDL",
+			"Flag_FD_Echo_F",
+			"Flag_FD_Echo_Dmg_F",
 			"Echo_CTF_Flag_Base",
 			"Echo_CTF_Flag_Army",
 			"Echo_M808B2_Opfor",
@@ -85,7 +87,9 @@ class cfgPatches
 			"OPTRE_Weapons_AR",
 			"A3_Data_F_Mark",
 			"OPTRE_Weapons_SMG",
-			"OPTRE_Weapons_Pistol"
+			"OPTRE_Weapons_Pistol",
+			"OPAEX_Aircore",
+			"OPAEX_Core"
 		};
 		weapons[]=
 		{
@@ -106,6 +110,9 @@ class cfgPatches
 			"Echo_CH252_Hicks_T",
 			"Echo_CH252_Hicks_WDL",
 			"Echo_CH252_Hicks_S",
+			"Echo_CH252_Phoenix_T",
+			"Echo_CH252_Phoenix_WDL",
+			"Echo_CH252_Phoenix_S",
 			"Echo_CH252_H1_T",
 			"Echo_CH252_H1_WDL",
 			"Echo_CH252_H1_S",
@@ -151,6 +158,10 @@ class cfgPatches
 			"Echo_CH252_H_Westerwald_T",
 			"Echo_CH252_H_Westerwald_WDL",
 			"Echo_CH252_H_Westerwald_S",
+			"Echo_CH252_H_Gilchrist_T",
+			"Echo_CH252_H_Gilchrist_WDL",
+			"Echo_CH252_H_Gilchrist_S",
+			"Echo_UNCN_Cap",
 			"Echo_Patrolcap_Snow",
 			"Echo_Patrolcap_MCAM",
 			"Echo_Patrolcap_WDL",
@@ -162,6 +173,8 @@ class cfgPatches
 			"Echo_Beret_Infantry",
 			"Echo_Beret_Armor",
 			"Echo_Beret_Air",
+			"UNCN_Press_Vest_Named",
+			"UNCN_Press_Vest",
 			"Echo_M52A_R_B_A",
 			"Echo_M52A_R_B_B",
 			"Echo_M52A_R_W_A",
@@ -232,6 +245,10 @@ class CfgEditorSubcategories
 	{
 		displayName="Anti-Air";
 	};
+	class Echo_Smart_AI
+	{
+		displayName="AI";
+	};
 };
 class CfgFactionClasses
 {
@@ -259,9 +276,6 @@ class CfgFunctions
 			{
 			};
 			class PelicanUnLoadValidate
-			{
-			};
-			class PelicanLoadTaruPodMenuLoad
 			{
 			};
 		};
@@ -525,8 +539,8 @@ class cfgWeapons
 	class Pylons;
 	class OPTRE_M247T_Coax;
 	class AnimationSources;
-
-
+	class H_MilCap_blue;
+	class V_Press_F;
 	class OPTRE_M247H: OPTRE_M247T_Coax
 	{
 		magazines[]=
@@ -535,7 +549,6 @@ class cfgWeapons
 		};
 		muzzlePos="usti hlavne";
 		muzzleEnd="konec hlavne";
-		selectionFireAnim="zasleh";
 		class gunParticles
 		{
 			class effect1
@@ -625,7 +638,7 @@ class cfgWeapons
 		{
 			"Echo_6Rnd_ALIM_Gauss_Slugs"
 		};
-		reloadTime=12;
+		reloadTime=10;
 		magazinereloadTime=9;
 	};
 	class M6G_Army: OPTRE_M6G
@@ -769,7 +782,7 @@ class cfgWeapons
 			"OPTRE_32Rnd_762x51_Mag_JHP",
 			"OPTRE_32Rnd_762x51_Mag_JHPT",
 			"OPTRE_32Rnd_762x51_Mag_SS",
-			"OPTRE_32Rnd_762x51_Mag_SST",
+			"OPTRE_32Rnd_762x51_Mag_SST"
 		};
 	};
 	class OPTRE_MA37GL: OPTRE_MA5CGL
@@ -848,7 +861,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Jaeger)";
-		optreVarietys[] = {"Echo_VX16_Jaeger_S","Echo_VX16_Jaeger_S_dp","_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_S",
+			"Echo_VX16_Jaeger_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -858,7 +876,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_S_co.paa",
 			"optre_unsc_units\army\data\facemask_white_skull_co.paa"
 		};
 	};
@@ -867,7 +885,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Jaeger)";
-		optreVarietys[] = {"Echo_VX16_Jaeger_S","Echo_VX16_Jaeger_S_dp","_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_S",
+			"Echo_VX16_Jaeger_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -877,7 +900,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_S_co.paa",
 			"optre_unsc_units\army\data\facemask_white_skull_co.paa"
 		};
 	};
@@ -886,7 +909,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Jaeger)";
-		optreVarietys[]={"Echo_VX16_Jaeger_T", "Echo_VX16_Jaeger_T_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_T",
+			"Echo_VX16_Jaeger_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -896,7 +924,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_T_co.paa",
 			"optre_unsc_units\army\data\facemask_desert_skull_co.paa"
 		};
 	};
@@ -905,7 +933,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Jaeger)";
-		optreVarietys[] = {"Echo_VX16_Jaeger_T","Echo_VX16_Jaeger_T_dp","_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_T",
+			"Echo_VX16_Jaeger_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -915,7 +948,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_T_co.paa",
 			"optre_unsc_units\army\data\facemask_desert_skull_co.paa"
 		};
 	};
@@ -924,7 +957,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Jaeger)";
-		optreVarietys[]={"Echo_VX16_Jaeger_O", "Echo_VX16_Jaeger_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_O",
+			"Echo_VX16_Jaeger_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -934,7 +972,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_O_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_O_co.paa",
 			"optre_unsc_units\army\data\facemask_olive_skull_co.paa"
 		};
 	};
@@ -943,7 +981,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Jaeger)";
-		optreVarietys[]={"Echo_VX16_Jaeger_O", "Echo_VX16_Jaeger_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Jaeger_O",
+			"Echo_VX16_Jaeger_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -953,7 +996,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Jaeger_O_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Jaeger_O_co.paa",
 			"optre_unsc_units\army\data\facemask_olive_skull_co.paa"
 		};
 	};
@@ -962,7 +1005,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_T", "Echo_VX16_Huck_T_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_T",
+			"Echo_VX16_Huck_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -972,7 +1020,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_T_co.paa",
 			"optre_unsc_units\army\data\facemask_desert_skull_co.paa"
 		};
 	};
@@ -981,7 +1029,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_T", "Echo_VX16_Huck_T_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_T",
+			"Echo_VX16_Huck_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -991,7 +1044,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_T_co.paa",
 			"optre_unsc_units\army\data\facemask_desert_skull_co.paa"
 		};
 	};
@@ -1000,7 +1053,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_O", "Echo_VX16_Huck_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_O",
+			"Echo_VX16_Huck_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1010,7 +1068,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_O_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_O_co.paa",
 			"optre_unsc_units\army\data\facemask_olive_skull_co.paa"
 		};
 	};
@@ -1019,7 +1077,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_O", "Echo_VX16_Huck_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_O",
+			"Echo_VX16_Huck_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1029,7 +1092,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_O_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_O_co.paa",
 			"optre_unsc_units\army\data\facemask_olive_skull_co.paa"
 		};
 	};
@@ -1038,7 +1101,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_S", "Echo_VX16_Huck_S_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_S",
+			"Echo_VX16_Huck_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1048,7 +1116,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_S_co.paa",
 			"optre_unsc_units\army\data\facemask_white_skull_co.paa"
 		};
 	};
@@ -1057,7 +1125,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Huck)";
-		optreVarietys[]={"Echo_VX16_Huck_S", "Echo_VX16_Huck_S_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Huck_S",
+			"Echo_VX16_Huck_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1067,7 +1140,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Huck_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Huck_S_co.paa",
 			"optre_unsc_units\army\data\facemask_white_skull_co.paa"
 		};
 	};
@@ -1076,7 +1149,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_T", "Echo_VX16_Roland_T_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_T",
+			"Echo_VX16_Roland_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1086,7 +1164,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_T_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_T_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_T_dp: OPTRE_UNSC_VX16_HelmetV
@@ -1094,7 +1172,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Tan (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_T", "Echo_VX16_Roland_T_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_T",
+			"Echo_VX16_Roland_T_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1104,7 +1187,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_T_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Air\Echo_VX16_Roland_T_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_S: OPTRE_UNSC_VX16_Helmet
@@ -1112,7 +1195,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_S", "Echo_VX16_Roland_S_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_S",
+			"Echo_VX16_Roland_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1122,7 +1210,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_S_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_S_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_S_dp: OPTRE_UNSC_VX16_HelmetV
@@ -1130,7 +1218,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Snow (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_S", "Echo_VX16_Roland_S_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_S",
+			"Echo_VX16_Roland_S_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1140,7 +1233,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_S_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_S_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_O: OPTRE_UNSC_VX16_Helmet
@@ -1148,7 +1241,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_O", "Echo_VX16_Roland_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_O",
+			"Echo_VX16_Roland_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1158,7 +1256,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_O_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_O_co.paa"
 		};
 	};
 	class Echo_VX16_Roland_O_dp: OPTRE_UNSC_VX16_HelmetV
@@ -1166,7 +1264,12 @@ class cfgWeapons
 		dlc="Echo Company Armory";
 		author="Barais & OPTRE";
 		displayName="[Echo] VX-16 Air Helmet Olive (Roland)";
-		optreVarietys[]={"Echo_VX16_Roland_O", "Echo_VX16_Roland_O_dp", "_broken"};
+		optreVarietys[]=
+		{
+			"Echo_VX16_Roland_O",
+			"Echo_VX16_Roland_O_dp",
+			"_broken"
+		};
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1176,7 +1279,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_VX16_Roland_O_co.paa"
+			"Echo_Company_Armory\data\Headgear\Air\Echo_VX16_Roland_O_co.paa"
 		};
 	};
 	class Echo_CH252_Armor_T: VES_CH252_MAR_Vacuum
@@ -1185,6 +1288,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_T",
+			"Echo_CH252_Armor_T_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1197,7 +1306,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_Armor_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_T_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1214,7 +1323,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_Armor_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Armor_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_T",
+			"Echo_CH252_Armor_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_T_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1249,6 +1428,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_WDL",
+			"Echo_CH252_Armor_WDL_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1261,7 +1446,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_Armor_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_WDL_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1278,7 +1463,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_Armor_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Armor_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_WDL",
+			"Echo_CH252_Armor_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_WDL_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1313,6 +1568,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_S",
+			"Echo_CH252_Armor_S_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1325,7 +1586,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_Armor_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_S_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1342,7 +1603,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_Armor_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Armor_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Armor_S",
+			"Echo_CH252_Armor_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_H_Armor_S_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1377,6 +1708,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Brennan (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_T",
+			"Echo_CH252_Brennan_T_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1389,7 +1726,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_T_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1406,7 +1743,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Brennan_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Brennan (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_T",
+			"Echo_CH252_Brennan_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_T_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1441,6 +1848,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Brennan (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_WDL",
+			"Echo_CH252_Brennan_WDL_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1453,7 +1866,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_WDL_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1470,7 +1883,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Brennan_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Brennan (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_WDL",
+			"Echo_CH252_Brennan_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_WDL_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1505,6 +1988,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Brennan (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_S",
+			"Echo_CH252_Brennan_S_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1517,7 +2006,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_S_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1534,7 +2023,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Brennan_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Brennan_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Brennan (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Brennan_S",
+			"Echo_CH252_Brennan_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Brennan_H_S_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1569,6 +2128,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Clay (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_T",
+			"Echo_CH252_Clay_T_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1581,7 +2146,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Clay_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_T_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1598,7 +2163,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Clay_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Clay_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Clay (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_T",
+			"Echo_CH252_Clay_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_T_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1633,6 +2268,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Clay (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_WDL",
+			"Echo_CH252_Clay_WDL_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1645,7 +2286,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Clay_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_WDL_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1662,7 +2303,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Clay_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Clay_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Clay (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_WDL",
+			"Echo_CH252_Clay_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_WDL_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1697,6 +2408,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Clay (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_S",
+			"Echo_CH252_Clay_S_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1709,7 +2426,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Clay_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_S_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1726,7 +2443,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Clay_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Clay_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Clay (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Clay_S",
+			"Echo_CH252_Clay_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Clay_H_S_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1761,6 +2548,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Doc (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_T",
+			"Echo_CH252_Doc_T_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1773,7 +2566,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Doc_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_T_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1790,7 +2583,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Doc_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Doc_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Doc (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_T",
+			"Echo_CH252_Doc_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_T_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1825,6 +2688,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Doc (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_WDL",
+			"Echo_CH252_Doc_WDL_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1837,7 +2706,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Doc_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_WDL_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1854,7 +2723,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Doc_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Doc_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Doc (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_WDL",
+			"Echo_CH252_Doc_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_WDL_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1889,6 +2828,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Doc (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_S",
+			"Echo_CH252_Doc_S_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1901,7 +2846,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Doc_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_S_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1918,7 +2863,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Doc_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Doc_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Doc (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Doc_S",
+			"Echo_CH252_Doc_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Doc_H_S_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -1953,6 +2968,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Hicks (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_T",
+			"Echo_CH252_Hicks_T_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -1965,7 +2986,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_T_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -1982,7 +3003,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Hicks_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Hicks (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_T",
+			"Echo_CH252_Hicks_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_T_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2017,6 +3108,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Hicks (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_WDL",
+			"Echo_CH252_Hicks_WDL_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -2029,7 +3126,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_WDL_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2046,7 +3143,77 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Hicks_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Hicks (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_WDL",
+			"Echo_CH252_Hicks_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_WDL_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2081,6 +3248,12 @@ class cfgWeapons
 		author="Echo Company";
 		scope=2;
 		displayName="[Echo] Crew Helmet Hicks (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_S",
+			"Echo_CH252_Hicks_S_dp",
+			"_broken"
+		};
 		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
 		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
 		hiddenSelections[]=
@@ -2093,7 +3266,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_S_co.paa",
 			"optre_unsc_units\army\data\helmet_visor_ca.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2110,7 +3283,497 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Hicks_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Hicks_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Hicks (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Hicks_S",
+			"Echo_CH252_Hicks_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Hicks_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_T: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=2;
+		displayName="[Echo] Crew Helmet Phoenix (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_T",
+			"Echo_CH252_Phoenix_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_T_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Phoenix (Tan)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_T",
+			"Echo_CH252_Phoenix_T_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_T_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_T_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_WDL: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=2;
+		displayName="[Echo] Crew Helmet Phoenix (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_WDL",
+			"Echo_CH252_Phoenix_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_WDL_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Phoenix (Woodland)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_WDL",
+			"Echo_CH252_Phoenix_WDL_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_WDL_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_WDL_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_S: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=2;
+		displayName="[Echo] Crew Helmet Phoenix (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_S",
+			"Echo_CH252_Phoenix_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_S_co.paa",
+				"optre_unsc_units\army\data\helmet_visor_ca.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Face
+				{
+					hitpointName="HitFace";
+					armor=20;
+					passThrough=0.1;
+				};
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_Phoenix_S_dp: VES_CH252_MAR_Vacuum
+	{
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		scope=0;
+		displayName="[Echo] Crew Helmet Phoenix (Snow)";
+		optreVarietys[]=
+		{
+			"Echo_CH252_Phoenix_S",
+			"Echo_CH252_Phoenix_S_dp",
+			"_broken"
+		};
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Collar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_S_co.paa",
+			"optre_unsc_units\army\data\helmet_visor_ca.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Collar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Armor\Echo_Phoenix_H_S_co.paa",
 				"optre_unsc_units\army\data\helmet_visor_ca.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2160,7 +3823,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H1_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2180,7 +3843,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H1_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2218,7 +3881,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H1_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2238,7 +3901,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H1_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2276,7 +3939,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H1_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2296,7 +3959,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H1_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H1_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2334,7 +3997,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H2_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2354,7 +4017,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H2_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2392,7 +4055,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H2_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2412,7 +4075,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H2_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2450,7 +4113,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H2_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2470,7 +4133,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H2_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H2_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2508,7 +4171,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H3_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H3_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2528,7 +4191,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H3_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Infantry\Echo_H3_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2566,7 +4229,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H3_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H3_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2586,7 +4249,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H3_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H3_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2624,7 +4287,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H3_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H3_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2644,7 +4307,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H3_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H3_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2682,7 +4345,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_M_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2702,7 +4365,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_M_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2740,7 +4403,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_M_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2760,7 +4423,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_M_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2798,7 +4461,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_M_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2818,7 +4481,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_M_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_M_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2856,7 +4519,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_RTO_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2876,7 +4539,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_RTO_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2914,7 +4577,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_RTO_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2934,7 +4597,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_RTO_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -2972,7 +4635,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_H_RTO_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -2992,7 +4655,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_H_RTO_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_H_RTO_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3030,7 +4693,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Baker_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3050,7 +4713,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Baker_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3088,7 +4751,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Baker_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3108,7 +4771,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Baker_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3146,7 +4809,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Baker_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3166,7 +4829,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Baker_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Baker_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3204,7 +4867,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Farf_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3224,7 +4887,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Farf_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3262,7 +4925,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Farf_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3282,7 +4945,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Farf_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3320,7 +4983,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Farf_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3340,7 +5003,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Farf_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Farf_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3378,7 +5041,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3398,7 +5061,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3436,7 +5099,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3456,7 +5119,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3494,7 +5157,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3514,7 +5177,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_MacTavish_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_MacTavish_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3552,7 +5215,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3572,7 +5235,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3610,7 +5273,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3630,7 +5293,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3668,7 +5331,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3688,7 +5351,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Nexas_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Nexas_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3726,7 +5389,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Real_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3746,7 +5409,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Real_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3784,7 +5447,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Real_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3804,7 +5467,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Real_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3842,7 +5505,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Real_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3862,7 +5525,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Real_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Real_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3900,7 +5563,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Red_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3920,7 +5583,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Red_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -3958,7 +5621,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Red_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -3978,7 +5641,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Red_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4016,7 +5679,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Red_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4036,7 +5699,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Red_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Red_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4074,7 +5737,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4094,7 +5757,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4132,7 +5795,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4152,7 +5815,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4190,7 +5853,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4210,7 +5873,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Taylor_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Taylor_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4248,7 +5911,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4268,7 +5931,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4306,7 +5969,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4326,7 +5989,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4364,7 +6027,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4384,7 +6047,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Thomas_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Thomas_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4422,7 +6085,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Udan_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4442,7 +6105,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Udan_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4480,7 +6143,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Udan_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4500,7 +6163,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Udan_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4538,7 +6201,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Udan_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4558,7 +6221,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Udan_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Udan_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4596,7 +6259,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_T_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_T_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4616,7 +6279,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_T_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_T_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4654,7 +6317,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_WDL_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_WDL_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4674,7 +6337,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_WDL_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_WDL_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 			};
@@ -4712,7 +6375,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_S_co.paa",
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_S_co.paa",
 			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
 		};
@@ -4732,9 +6395,222 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Westerwald_H_S_co.paa",
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Westerwald_H_S_co.paa",
 				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
 				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_H_Gilchrist_T: VES_CH252_MAR_Light
+	{
+		dlc="Echo Company Armory";
+		scope=2;
+		author="Echo Company";
+		displayName="[Echo] CH252 Helmet Gilchrist (Tan)";
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Neck",
+			"H_UNSCVacLower",
+			"H_UNSCVacVisor",
+			"H_VacCollar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_T_co.paa",
+			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Neck",
+				"H_UNSCVacLower",
+				"H_UNSCVacVisor",
+				"H_VacCollar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_T_co.paa",
+				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_H_Gilchrist_WDL: VES_CH252_MAR_Light
+	{
+		dlc="Echo Company Armory";
+		scope=2;
+		author="Echo Company";
+		displayName="[Echo] CH252 Helmet Gilchrist (Woodland)";
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Neck",
+			"H_UNSCVacLower",
+			"H_UNSCVacVisor",
+			"H_VacCollar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_WDL_co.paa",
+			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Neck",
+				"H_UNSCVacLower",
+				"H_UNSCVacVisor",
+				"H_VacCollar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_WDL_co.paa",
+				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_CH252_H_Gilchrist_S: VES_CH252_MAR_Light
+	{
+		dlc="Echo Company Armory";
+		scope=2;
+		author="Echo Company";
+		displayName="[Echo] CH252 Helmet Gilchrist (Snow)";
+		picture="\OPTRE_UNSC_Units\Army\icons\Army_Helmet_wdl.paa";
+		model="\OPTRE_UNSC_Units\Army\helmet.p3d";
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo2",
+			"camo3",
+			"H_Neck",
+			"H_UNSCVacLower",
+			"H_UNSCVacVisor",
+			"H_VacCollar",
+			"H_Ghillie"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_S_co.paa",
+			"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+			"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			uniformModel="\OPTRE_UNSC_Units\Army\helmet.p3d";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo2",
+				"camo3",
+				"H_Neck",
+				"H_UNSCVacLower",
+				"H_UNSCVacVisor",
+				"H_VacCollar",
+				"H_Ghillie"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"Echo_Company_Armory\data\Headgear\Infantry\Echo_Gilchrist_H_S_co.paa",
+				"optre_unsc_units\army\data\odst_helmet_visor_co.paa",
+				"optre_unsc_units\army\data\ghillie_woodland_co.paa"
+			};
+			ace_hearing_protection=1.5;
+			ace_hearing_lowerVolume=0.1;
+			class HitpointsProtectionInfo
+			{
+				class Head
+				{
+					hitpointName="HitHead";
+					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class Echo_UNCN_Cap: H_MilCap_blue
+	{
+		dlc="Echo Company Armory";
+		scope=2;
+		displayName="UNCN Press Cap";
+		picture="\A3\Characters_F_Bootcamp\Data\UI\icon_H_MilCap_blue_ca.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\Echo_Company_Armory\data\Headgear\Other\UNCN_Cap_co.paa"
+		};
+		model="\A3\Characters_F\Common\cappatrol";
+		class itemInfo: HeadgearItem
+		{
+			uniformModel="\A3\Characters_F\Common\cappatrol";
+			hiddenSelections[]=
+			{
+				"camo"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Echo_Company_Armory\data\Headgear\Other\UNCN_Cap_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4761,7 +6637,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_snow_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_snow_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4773,7 +6649,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_snow_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_snow_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4800,7 +6676,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_black_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_black_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4812,7 +6688,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_black_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_black_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4839,7 +6715,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_woodland_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_woodland_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4851,7 +6727,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_army_woodland_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_army_woodland_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4878,7 +6754,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_woodland_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_woodland_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4890,7 +6766,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_woodland_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_woodland_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4917,7 +6793,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_snow_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_snow_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4929,7 +6805,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_snow_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_snow_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -4956,7 +6832,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_black_co.paa"
+			"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_black_co.paa"
 		};
 		model="\OPTRE_UNSC_Units\Army\patrolcap.p3d";
 		class itemInfo: HeadgearItem
@@ -4968,7 +6844,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_patrolcap_red_black_co.paa"
+				"Echo_Company_Armory\data\Headgear\Patrol\Echo_patrolcap_red_black_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -5034,7 +6910,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\booniehat_sno_co.paa"
+			"Echo_Company_Armory\data\Headgear\Boonie\booniehat_sno_co.paa"
 		};
 		model="A3\Characters_F_EPB\Common\booniehat_hs.p3d";
 		class itemInfo: HeadgearItem
@@ -5046,7 +6922,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\booniehat_sno_co.paa"
+				"Echo_Company_Armory\data\Headgear\Boonie\booniehat_sno_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -5073,7 +6949,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Beret_Infantry_co.paa"
+			"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Infantry_co.paa"
 		};
 		model="a3\characters_f_epb\BLUFOR\headgear_beret02.p3d";
 		class itemInfo: HeadgearItem
@@ -5085,7 +6961,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Beret_Infantry_co.paa"
+				"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Infantry_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -5112,7 +6988,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Beret_Armor_co.paa"
+			"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Armor_co.paa"
 		};
 		model="a3\characters_f_epb\BLUFOR\headgear_beret02.p3d";
 		class itemInfo: HeadgearItem
@@ -5124,7 +7000,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Beret_Armor_co.paa"
+				"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Armor_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -5151,7 +7027,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Echo_Company_Armory\data\Headgear\Echo_Beret_Air_co.paa"
+			"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Air_co.paa"
 		};
 		model="a3\characters_f_epb\BLUFOR\headgear_beret02.p3d";
 		class itemInfo: HeadgearItem
@@ -5163,7 +7039,7 @@ class cfgWeapons
 			};
 			hiddenSelectionsTextures[]=
 			{
-				"Echo_Company_Armory\data\Headgear\Echo_Beret_Air_co.paa"
+				"Echo_Company_Armory\data\Headgear\Beret\Echo_Beret_Air_co.paa"
 			};
 			ace_hearing_protection=1.5;
 			ace_hearing_lowerVolume=0.1;
@@ -5173,6 +7049,170 @@ class cfgWeapons
 				{
 					hitpointName="HitHead";
 					armor=20;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class UNCN_Press_Vest_Named: V_Press_F
+	{
+		scope=2;
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		displayName="UNCN Press Vest (Kaminski)";
+		picture="\A3\Characters_F_EPC\Data\UI\icon_V_PressVest_CA.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\Echo_Company_Armory\data\Armor\Echo_Press_Vest_Finan_co.paa"
+		};
+		model="\A3\Characters_F_EPC\Civil\equip_press_vest_01.p3d";
+		class ItemInfo: VestItem
+		{
+			uniformModel="\A3\Characters_F_EPC\Civil\equip_press_vest_01.p3d";
+			containerClass="Supply200";
+			mass=80;
+			hiddenSelections[]=
+			{
+				"camo"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Echo_Company_Armory\data\Armor\Echo_Press_Vest_Finan_co.paa"
+			};
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Legs
+				{
+					hitpointName="HitLegs";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Hands
+				{
+					hitpointName="HitHands";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=35;
+					passThrough=0.1;
+				};
+			};
+		};
+	};
+	class UNCN_Press_Vest: V_Press_F
+	{
+		scope=2;
+		dlc="Echo Company Armory";
+		author="Echo Company";
+		displayName="UNCN Press Vest";
+		picture="\A3\Characters_F_EPC\Data\UI\icon_V_PressVest_CA.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\Echo_Company_Armory\data\Armor\Echo_Press_Vest_UNCN_co.paa"
+		};
+		model="\A3\Characters_F_EPC\Civil\equip_press_vest_01.p3d";
+		class ItemInfo: VestItem
+		{
+			uniformModel="\A3\Characters_F_EPC\Civil\equip_press_vest_01.p3d";
+			containerClass="Supply200";
+			mass=80;
+			hiddenSelections[]=
+			{
+				"camo"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Echo_Company_Armory\data\Armor\Echo_Press_Vest_UNCN_co.paa"
+			};
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Legs
+				{
+					hitpointName="HitLegs";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Hands
+				{
+					hitpointName="HitHands";
+					armor=0;
+					passThrough=0.1;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=35;
+					passThrough=0.1;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=35;
 					passThrough=0.1;
 				};
 			};
@@ -12082,7 +14122,6 @@ class cfgWeapons
 class CfgVehicles
 {
 	class OPTRE_CTF_Flag_Base;
-	class FlagCarrier;
 	class OPTRE_Pelican_armed;
 	class VES_D77HTCI_A;
 	class OPTRE_UNSC_Rucksack;
@@ -12113,6 +14152,10 @@ class CfgVehicles
 	class GroundTarget;
 	class SensorTemplatePassiveRadar;
 	class SensorTemplateActiveRadar;
+	class SensorTemplateVisual;
+	class SensorTemplateNV;
+	class SensorTemplateIR;
+	class SensorTemplateLaser;
 	class B_APC_Tracked_01_rcws_F;
 	class I_APC_tracked_03_cannon_F;
 	class I_E_APC_tracked_03_cannon_F;
@@ -12134,7 +14177,9 @@ class CfgVehicles
 	class VehicleSystemsTemplateLeftGunner;
 	class VehicleSystemsTemplateRightGunner;
 	class B_APC_Tracked_01_CRV_F;
-
+	class FlagCarrier;
+	class EventHandlers;
+	
 	class Echo_Cougar: I_E_APC_tracked_03_cannon_F
 	{
 		dlc="Echo Company Armory";
@@ -12527,6 +14572,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="[Echo] CTF Flag";
+		editorPreview="\Echo_Company_Armory\data\Previews\Echo_CTF_Flag_Base.jpg";
 		hiddenSelections[]=
 		{
 			"camo1"
@@ -12542,6 +14588,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="[Echo] CTF Flag Army";
+		editorPreview="\Echo_Company_Armory\data\Previews\Echo_CTF_Flag_Army.jpg";
 		hiddenSelections[]=
 		{
 			"camo1"
@@ -13051,7 +15098,9 @@ class CfgVehicles
 		forceInGarage=1;
 		ace_cargo_space=20;
 		ace_cargo_hasCargo=1;
-		class TransportWeapons{};
+		class TransportWeapons
+		{
+		};
 		class TransportItems
 		{
 			class xx_Toolkit
@@ -13060,7 +15109,9 @@ class CfgVehicles
 				count=10;
 			};
 		};
-		class TransportMagazines{};
+		class TransportMagazines
+		{
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -13724,7 +15775,7 @@ class CfgVehicles
 				textures[]=
 				{
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_Body.paa",
-					"Echo_Company_Armory\data\Vehicles\Misc\Decals_Army.paa",
+					"Echo_Company_Armory\data\Vehicles\Scorpion\Decals_Army.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_int.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_parts.paa",
 					"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_tracks.paa",
@@ -13744,7 +15795,7 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_Body.paa",
-			"Echo_Company_Armory\data\Vehicles\Misc\Decals_Army.paa",
+			"Echo_Company_Armory\data\Vehicles\Scorpion\Decals_Army.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_int.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_parts.paa",
 			"Echo_Company_Armory\data\Vehicles\Scorpion\Echo_Scorpion_tracks.paa",
@@ -14402,6 +16453,175 @@ class CfgVehicles
 			"Arctic",
 			0
 		};
+		class Components: Components
+		{
+			class TransportPylonsComponent
+			{
+				UIPicture="\OPAEX_Pelican\Pelican.paa";
+				class pylons
+				{
+					class pylons1
+					{
+						maxweight=560;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_D77-TC"
+						};
+						attachment="OPAEX_M_ANVIL1_16Rnd";
+						bay=-1;
+						priority=2;
+						UIposition[]={0.1,0.5};
+						turret[]={};
+					};
+					class pylons2: pylons1
+					{
+						mirroredMissilePos=1;
+						UIposition[]={0.1,0.1};
+					};
+					class pylons3
+					{
+						maxweight=1000;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_B65"
+						};
+						attachment="OPAEX_M_Mk127_1Rnd";
+						bay=-1;
+						priority=1;
+						UIposition[]={0.2,0.30000001};
+						turret[]={};
+					};
+				};
+				class Presets
+				{
+					class Empty
+					{
+						displayName="Empty";
+						attachment[]={};
+					};
+					class Default
+					{
+						displayName="CAP";
+						attachment[]=
+						{
+							"OPAEX_M_C2GMLS_6Rnd",
+							"OPAEX_M_C2GMLS_6Rnd"
+						};
+					};
+					class CAS_Rockets
+					{
+						displayName="CAS: ANVIL I";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL1_16Rnd",
+							"OPAEX_M_ANVIL1_16Rnd"
+						};
+					};
+					class CAS_Rockets_Guided
+					{
+						displayName="CAS: ANVIL II & III";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL2_16Rnd",
+							"OPAEX_M_ANVIL3_16Rnd"
+						};
+					};
+					class CAS_AT
+					{
+						displayName="AT";
+						attachment[]=
+						{
+							"OPAEX_M_AGM502_4Rnd",
+							"OPAEX_M_AGM502_4Rnd"
+						};
+					};
+				};
+			};
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+					{
+						class AirTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						maxTrackableSpeed=300;
+						angleRangeHorizontal=180;
+						angleRangeVertical=90;
+						groundNoiseDistanceCoef=-1;
+						maxGroundNoiseDistance=-1;
+						minSpeedThreshold=0;
+						maxSpeedThreshold=0;
+						aimDown=30;
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class NVSensorComponent: SensorTemplateNV
+					{
+					};
+				};
+			};
+		};
 	};
 	class Echo_Pelican_Jaeger: VES_D77HTCI_A
 	{
@@ -14478,6 +16698,175 @@ class CfgVehicles
 			"Jaeger_A",
 			0
 		};
+		class Components: Components
+		{
+			class TransportPylonsComponent
+			{
+				UIPicture="\OPAEX_Pelican\Pelican.paa";
+				class pylons
+				{
+					class pylons1
+					{
+						maxweight=560;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_D77-TC"
+						};
+						attachment="OPAEX_M_ANVIL1_16Rnd";
+						bay=-1;
+						priority=2;
+						UIposition[]={0.1,0.5};
+						turret[]={};
+					};
+					class pylons2: pylons1
+					{
+						mirroredMissilePos=1;
+						UIposition[]={0.1,0.1};
+					};
+					class pylons3
+					{
+						maxweight=1000;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_B65"
+						};
+						attachment="OPAEX_M_Mk127_1Rnd";
+						bay=-1;
+						priority=1;
+						UIposition[]={0.2,0.30000001};
+						turret[]={};
+					};
+				};
+				class Presets
+				{
+					class Empty
+					{
+						displayName="Empty";
+						attachment[]={};
+					};
+					class Default
+					{
+						displayName="CAP";
+						attachment[]=
+						{
+							"OPAEX_M_C2GMLS_6Rnd",
+							"OPAEX_M_C2GMLS_6Rnd"
+						};
+					};
+					class CAS_Rockets
+					{
+						displayName="CAS: ANVIL I";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL1_16Rnd",
+							"OPAEX_M_ANVIL1_16Rnd"
+						};
+					};
+					class CAS_Rockets_Guided
+					{
+						displayName="CAS: ANVIL II & III";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL2_16Rnd",
+							"OPAEX_M_ANVIL3_16Rnd"
+						};
+					};
+					class CAS_AT
+					{
+						displayName="AT";
+						attachment[]=
+						{
+							"OPAEX_M_AGM502_4Rnd",
+							"OPAEX_M_AGM502_4Rnd"
+						};
+					};
+				};
+			};
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+					{
+						class AirTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						maxTrackableSpeed=300;
+						angleRangeHorizontal=180;
+						angleRangeVertical=90;
+						groundNoiseDistanceCoef=-1;
+						maxGroundNoiseDistance=-1;
+						minSpeedThreshold=0;
+						maxSpeedThreshold=0;
+						aimDown=30;
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class NVSensorComponent: SensorTemplateNV
+					{
+					};
+				};
+			};
+		};
 	};
 	class Echo_Pelican_Huck: VES_D77HTCI_A
 	{
@@ -14534,7 +16923,7 @@ class CfgVehicles
 				author="Echo Company";
 				textures[]=
 				{
-					"Echo_Company_Armory\data\Vehicles\Pelican\Echo_Pelican_Huck_A_co.paa",
+					"Echo_Company_Armory\data\Vehicles\Peilcan\Echo_Pelican_Huck_A_co.paa",
 					""
 				};
 			};
@@ -14553,6 +16942,175 @@ class CfgVehicles
 			0,
 			"Huck_A",
 			0
+		};
+		class Components: Components
+		{
+			class TransportPylonsComponent
+			{
+				UIPicture="\OPAEX_Pelican\Pelican.paa";
+				class pylons
+				{
+					class pylons1
+					{
+						maxweight=560;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_D77-TC"
+						};
+						attachment="OPAEX_M_ANVIL1_16Rnd";
+						bay=-1;
+						priority=2;
+						UIposition[]={0.1,0.5};
+						turret[]={};
+					};
+					class pylons2: pylons1
+					{
+						mirroredMissilePos=1;
+						UIposition[]={0.1,0.1};
+					};
+					class pylons3
+					{
+						maxweight=1000;
+						hardpoints[]=
+						{
+							"OPAEX_Hardpoint_B65"
+						};
+						attachment="OPAEX_M_Mk127_1Rnd";
+						bay=-1;
+						priority=1;
+						UIposition[]={0.2,0.30000001};
+						turret[]={};
+					};
+				};
+				class Presets
+				{
+					class Empty
+					{
+						displayName="Empty";
+						attachment[]={};
+					};
+					class Default
+					{
+						displayName="CAP";
+						attachment[]=
+						{
+							"OPAEX_M_C2GMLS_6Rnd",
+							"OPAEX_M_C2GMLS_6Rnd"
+						};
+					};
+					class CAS_Rockets
+					{
+						displayName="CAS: ANVIL I";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL1_16Rnd",
+							"OPAEX_M_ANVIL1_16Rnd"
+						};
+					};
+					class CAS_Rockets_Guided
+					{
+						displayName="CAS: ANVIL II & III";
+						attachment[]=
+						{
+							"OPAEX_M_ANVIL2_16Rnd",
+							"OPAEX_M_ANVIL3_16Rnd"
+						};
+					};
+					class CAS_AT
+					{
+						displayName="AT";
+						attachment[]=
+						{
+							"OPAEX_M_AGM502_4Rnd",
+							"OPAEX_M_AGM502_4Rnd"
+						};
+					};
+				};
+			};
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+					{
+						class AirTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						maxTrackableSpeed=300;
+						angleRangeHorizontal=180;
+						angleRangeVertical=90;
+						groundNoiseDistanceCoef=-1;
+						maxGroundNoiseDistance=-1;
+						minSpeedThreshold=0;
+						maxSpeedThreshold=0;
+						aimDown=30;
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class NVSensorComponent: SensorTemplateNV
+					{
+					};
+				};
+			};
 		};
 	};
 	class Echo_Pelican_Roland: VES_D77HTCI_A
@@ -14629,6 +17187,175 @@ class CfgVehicles
 			0,
 			"Roland_A",
 			0
+		};
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class TransportPylonsComponent
+				{
+					UIPicture="\OPAEX_Pelican\Pelican.paa";
+					class pylons
+					{
+						class pylons1
+						{
+							maxweight=560;
+							hardpoints[]=
+							{
+								"OPAEX_Hardpoint_D77-TC"
+							};
+							attachment="OPAEX_M_ANVIL1_16Rnd";
+							bay=-1;
+							priority=2;
+							UIposition[]={0.1,0.5};
+							turret[]={};
+						};
+						class pylons2: pylons1
+						{
+							mirroredMissilePos=1;
+							UIposition[]={0.1,0.1};
+						};
+						class pylons3
+						{
+							maxweight=1000;
+							hardpoints[]=
+							{
+								"OPAEX_Hardpoint_B65"
+							};
+							attachment="OPAEX_M_Mk127_1Rnd";
+							bay=-1;
+							priority=1;
+							UIposition[]={0.2,0.30000001};
+							turret[]={};
+						};
+					};
+					class Presets
+					{
+						class Empty
+						{
+							displayName="Empty";
+							attachment[]={};
+						};
+						class Default
+						{
+							displayName="CAP";
+							attachment[]=
+							{
+								"OPAEX_M_C2GMLS_6Rnd",
+								"OPAEX_M_C2GMLS_6Rnd"
+							};
+						};
+						class CAS_Rockets
+						{
+							displayName="CAS: ANVIL I";
+							attachment[]=
+							{
+								"OPAEX_M_ANVIL1_16Rnd",
+								"OPAEX_M_ANVIL1_16Rnd"
+							};
+						};
+						class CAS_Rockets_Guided
+						{
+							displayName="CAS: ANVIL II & III";
+							attachment[]=
+							{
+								"OPAEX_M_ANVIL2_16Rnd",
+								"OPAEX_M_ANVIL3_16Rnd"
+							};
+						};
+						class CAS_AT
+						{
+							displayName="AT";
+							attachment[]=
+							{
+								"OPAEX_M_AGM502_4Rnd",
+								"OPAEX_M_AGM502_4Rnd"
+							};
+						};
+					};
+				};
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=300;
+						animDirection="mainGun";
+						angleRangeHorizontal=46;
+						angleRangeVertical=34;
+						aimdown=-0.25;
+					};
+					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+					{
+						class AirTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						maxTrackableSpeed=300;
+						angleRangeHorizontal=180;
+						angleRangeVertical=90;
+						groundNoiseDistanceCoef=-1;
+						maxGroundNoiseDistance=-1;
+						minSpeedThreshold=0;
+						maxSpeedThreshold=0;
+						aimDown=30;
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class NVSensorComponent: SensorTemplateNV
+					{
+					};
+				};
+			};
 		};
 	};
 };
