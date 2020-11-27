@@ -770,7 +770,7 @@ class cfgWeapons
 		};
 	};
 
-	class OPTRE_M247H: LMG_coax
+	class OPTRE_M247H: OPTRE_M247T_Coax
 	{
 		magazines[]=
 		{
@@ -19087,7 +19087,7 @@ class CfgVehicles
       "OPTRE_NVG"
     };
   };
-	class Echo_Cougar: I_E_APC_tracked_03_cannon_F
+	/*class Echo_Cougar: I_E_APC_tracked_03_cannon_F
 	{
 		dlc="Echo Company Armory";
 		author="Barais & A3";
@@ -19135,7 +19135,7 @@ class CfgVehicles
 				};
 			};
 		};
-	};
+	};**/
 	class Echo_ANPRC_521_Standard: OPTRE_ANPRC_521_Green
 	{
 		dlc="Echo Company Armory";
