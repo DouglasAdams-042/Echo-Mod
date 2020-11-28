@@ -335,19 +335,6 @@ class CfgAmmo
 	class OPTRE_25x130mm_Slug;
 	class B_35mm_AA_Tracer_Red;
 	class OPTRE_Sh_105mm_SAPHE;
-	class OPTRE_100Rnd_95x40_Box;
-
-	class OPTRE_100Rnd_95x40_Box_Tracer: OPTRE_100Rnd_95x40_Box
-	{
-		dlc="OPTRE";
-		displayname="100Rnd 9.5x40mm Box Magazine (Tracers)";
-		displaynameshort="9.5x40mm Tracer";
-		ammo="OPTRE_B_95x40_Tracer";
-		picture="\OPTRE_Weapons\MG\icons\magazine.paa";
-		descriptionshort="100 Round Box Magazine<br>9.5x40mm<br>Tracer";
-		tracersEvery=5;
-		lastRoundsTracer=100;
-	};
 
 	class OPTRE_Sh_90mm_S1: OPTRE_Sh_105mm_SAPHE
 	{
@@ -377,7 +364,19 @@ class cfgMagazines
 	class 4Rnd_GAA_missiles;
 	class 6Rnd_45ACP_Cylinder;
 	class OPTRE_60Rnd_105mm_APBC;
+	class OPTRE_100Rnd_95x40_Box;
 
+	class OPTRE_100Rnd_95x40_Box_Tracer: OPTRE_100Rnd_95x40_Box
+	{
+		dlc="OPTRE";
+		displayname="100Rnd 9.5x40mm Box Magazine (Tracers)";
+		displaynameshort="9.5x40mm Tracer";
+		ammo="OPTRE_B_95x40_Tracer";
+		picture="\OPTRE_Weapons\MG\icons\magazine.paa";
+		descriptionshort="100 Round Box Magazine<br>9.5x40mm<br>Tracer";
+		tracersEvery=5;
+		lastRoundsTracer=100;
+	};
 	class OPTRE_10Rnd_90mm_S1: OPTRE_60Rnd_105mm_APBC
 	{
 		ammo="OPTRE_Sh_90mm_S1";
