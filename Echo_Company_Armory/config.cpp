@@ -61,7 +61,8 @@ class cfgPatches
 		ammo[]=
 		{
 			"OPTRE_Sh_90mm_S1",
-			"ECHO_B_762x51_NARQ"
+			"ECHO_B_762x51_NARQ",
+			"OPTRE_Sh_120mm_HE"
 		};
 		requiredVersion=0.1;
 		requiredAddons[]=
@@ -233,33 +234,9 @@ class CfgEditorSubcategories
 	{
 		displayName="Air Vehicles";
 	};
-	class Echo_Co_Units_Troopers
-	{
-		displayName="Troopers";
-	};
-	class Echo_Co_Units_NCOs
-	{
-		displayName="NCOs";
-	};
 	class Echo_Co_Anti_Air
 	{
 		displayName="Anti-Air";
-	};
-	class Echo_Co_Units_Troopers_Tan
-	{
-		displayName="Troopers[Tan]";
-	};
-	class Echo_Co_Units_Troopers_Snow
-	{
-		displayName="Troopers[Snow]";
-	};
-	class Echo_Co_Units_Troopers_WDL
-	{
-		displayName="Troopers[WDL]";
-	};
-	class Echo_Co_Units_Pilots
-	{
-		displayName="Aviators";
 	};
 };
 class CfgFactionClasses
@@ -336,6 +313,14 @@ class CfgAmmo
 	class B_35mm_AA_Tracer_Red;
 	class OPTRE_Sh_105mm_SAPHE;
 
+	class OPTRE_Sh_120mm_HE: OPTRE_Sh_105mm_SAPHE
+	{
+		hit=300;
+		indirectHit=100;
+		indirectHitRange=5;
+		caliber=10;
+		explosive=1;
+	};
 	class OPTRE_Sh_90mm_S1: OPTRE_Sh_105mm_SAPHE
 	{
 		hit=20;
@@ -365,6 +350,15 @@ class cfgMagazines
 	class 6Rnd_45ACP_Cylinder;
 	class OPTRE_60Rnd_105mm_APBC;
 	class OPTRE_100Rnd_95x40_Box;
+	class OPTRE_60Rnd_105mm_SAPHE;
+
+	class OPTRE_40Rnd_120mm_HE: OPTRE_60Rnd_105mm_SAPHE
+	{
+		ammo="OPTRE_Sh_120mm_HE";
+		count=40;
+		displayname="105mm HE";
+		displaynameshort="HE";
+	};
 
 	class OPTRE_100Rnd_95x40_Box_Tracer: OPTRE_100Rnd_95x40_Box
 	{
@@ -521,6 +515,7 @@ class MuzzleSlot;
 class CowsSlot;
 class PointerSlot;
 class UnderBarrelSlot;
+
 class cfgWeapons
 {
 	class VES_CH252_MAR_Light;
@@ -549,7 +544,6 @@ class cfgWeapons
 	class OPTRE_MA37BGL;
 	class OPTRE_MA32B;
 	class OPTRE_MA32BGL;
-	class OPTRE_M73;
 	class hgun_Pistol_heavy_02_F;
 	class OPTRE_UNSC_VX16_HelmetNV;
 	class OPTRE_UNSC_VX16_Helmet;
@@ -567,6 +561,8 @@ class cfgWeapons
 	class AnimationSources;
 	class H_MilCap_blue;
 	class V_Press_F;
+	class OPTRE_MachineGun_Base;
+	class OPTRE_M73;
 
 	class OPTRE_M247T_Coax: LMG_coax
 	{
@@ -805,7 +801,8 @@ class cfgWeapons
 			"OPTRE_60Rnd_105mm_APBC",
 			"OPTRE_60Rnd_105mm_SAPHE",
 			"OPTRE_60Rnd_105mm_HEAT",
-			"OPTRE_10Rnd_90mm_S1"
+			"OPTRE_10Rnd_90mm_S1",
+			"OPTRE_40Rnd_120mm_HE"
 		};
 		class gunParticles
 		{
@@ -868,6 +865,46 @@ class cfgWeapons
 		};
 		reloadTime=10;
 		magazinereloadTime=9;
+	};
+	class OPTRE_M73H: OPTRE_M73
+	{
+		magazines[] =
+		{
+			"Echo_100Rnd_762x51_Mixed_Box",
+			"Echo_100Rnd_762x51_Box",
+			"Echo_300Rnd_762x51_Mixed_Box",
+			"Echo_300Rnd_762x51_Box",
+			"OPTRE_36Rnd_95x40_Mag",
+			"OPTRE_36Rnd_95x40_Mag_Tracer",
+			"OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",
+			"OPTRE_36Rnd_95x40_Mag_JHP",
+			"OPTRE_36Rnd_95x40_Mag_JHPT",
+			"OPTRE_36Rnd_95x40_Mag_HPSAP",
+			"OPTRE_36Rnd_95x40_Mag_HPSAPT",
+			"OPTRE_36Rnd_95x40_Mag_SAPHE",
+			"OPTRE_36Rnd_95x40_Mag_SAPHET",
+			"OPTRE_36Rnd_95x40_Mag_SS",
+			"OPTRE_100Rnd_95x40_Box",
+			"OPTRE_100Rnd_95x40_Box_Tracer",
+			"OPTRE_100Rnd_95x40_Box_Tracer_Yellow",
+			"OPTRE_100Rnd_95x40_Box_JHP",
+			"OPTRE_100Rnd_95x40_Box_JHPT",
+			"OPTRE_100Rnd_95x40_Box_HPSAP",
+			"OPTRE_100Rnd_95x40_Box_HPSAPT",
+			"OPTRE_100Rnd_95x40_Box_SAPHE",
+			"OPTRE_100Rnd_95x40_Box_SAPHET",
+			"OPTRE_100Rnd_95x40_Box_SS",
+			"OPTRE_200Rnd_95x40_Box",
+			"OPTRE_200Rnd_95x40_Box_Tracer",
+			"OPTRE_200Rnd_95x40_Box_Tracer_Yellow",
+			"OPTRE_200Rnd_95x40_Box_JHP",
+			"OPTRE_200Rnd_95x40_Box_JHPT",
+			"OPTRE_200Rnd_95x40_Box_HPSAP",
+			"OPTRE_200Rnd_95x40_Box_HPSAPT",
+			"OPTRE_200Rnd_95x40_Box_SAPHE",
+			"OPTRE_200Rnd_95x40_Box_SAPHET",
+			"OPTRE_200Rnd_95x40_Box_SS"
+		};
 	};
 	class M6G_Army: OPTRE_M6G
 	{
@@ -14408,6 +14445,148 @@ class CfgVehicles
 	class FlagCarrier;
 	class EventHandlers;
 	class CargoTurret;
+	class B_Heli_Light_01_dynamicLoadout_F;
+
+	class Echo_Falcon_Armed2: B_Heli_Light_01_dynamicLoadout_F
+	{
+		dlc="Echo Company Armory";
+		author="Vespade & Barais";
+		model = "\OPTRE_vehicles\falcon\falcon.p3d";
+		scope=2;
+		scopeCurator=2;
+		forceInGarage=1;
+		displayName="[Echo] Red's Falcon";
+		editorCategory="Echo_Company";
+		editorSubcategory="Echo_Co_Air_Vehicles";
+		editorPreview="Echo_Company_Armory\data\Previews\Echo_Falcon_Armed.jpg";
+		crew="OPTRE_UNSC_Airforce_Soldier_Airman";
+		tf_hasLRradio=1;
+		tf_isolatedAmount=0.40000001;
+		tf_range=12000;
+		weapons[]=
+		{
+			"OPTRE_M6_Laser",
+			""
+		};
+		magazines[]=
+		{
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery",
+			"OPTRE_SpLaser_Battery"
+		};
+		class Turrets : Turrets
+		{
+			class CargoTurret_01 : CargoTurret
+			{
+				gunnerAction = "passenger_inside_2";
+				gunnerCompartments = "Compartment2";
+				memoryPointsGetInGunner = "pos_cargo_r";
+				memoryPointsGetInGunnerDir = "pos_cargo_r_dir";
+				gunnerName = "Passenger Gunner R";
+				proxyIndex = 4;
+				maxElev = 30;
+				minElev = -30;
+				maxTurn = 90;
+				minTurn = -90;
+				isPersonTurret = 1;
+				ejectDeadGunner = 0;
+				enabledByAnimationSource = "";
+				memoryPointGunnerOptics = "";
+			};
+			class CargoTurret_02 : CargoTurret_01
+			{
+				gunnerAction = "passenger_inside_2";
+				gunnerCompartments = "Compartment2";
+				memoryPointsGetInGunner = "pos_cargo_l";
+				memoryPointsGetInGunnerDir = "pos_cargo_l_dir";
+				gunnerName = "Passenger Gunner L";
+				proxyIndex = 1;
+				maxElev = 30;
+				minElev = -30;
+				maxTurn = 90;
+				minTurn = -90;
+				isPersonTurret = 1;
+				ejectDeadGunner = 0;
+				enabledByAnimationSource = "";
+				memoryPointGunnerOptics = "";
+			};
+			class CargoTurret_03 : CargoTurret_01
+			{
+				gunnerAction = "passenger_bench_1";
+				gunnerCompartments = "Compartment2";
+				memoryPointsGetInGunner = "pos_cargo_r";
+				memoryPointsGetInGunnerDir = "pos_cargo_r_dir";
+				gunnerName = "Passenger Skid R";
+				proxyIndex = 6;
+				isPersonTurret = 1;
+				ejectDeadGunner = 1;
+			};
+			class CargoTurret_04 : CargoTurret_03
+			{
+				gunnerAction = "passenger_bench_1";
+				gunnerCompartments = "Compartment2";
+				memoryPointsGetInGunner = "pos_cargo_l";
+				memoryPointsGetInGunnerDir = "pos_cargo_l_dir";
+				gunnerName = "Passenger Skid L";
+				proxyIndex = 7;
+				isPersonTurret = 1;
+				ejectDeadGunner = 1;
+			};
+		};
+		class textureSources
+		{
+			class tex_wdl
+			{
+				author="Vespade & Barais";
+				displayName="Woodland";
+				textures[]=
+				{
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_WDL_co.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_WDL_co2.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_WDL_co3.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_WDL_co4.paa"
+				};
+			};
+			class tex_des
+			{
+				author="Vespade & Barais";
+				displayName="Standard Echo";
+				textures[]=
+				{
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co2.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co3.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co4.paa"
+				};
+			};
+			class tex_snow
+			{
+				author="Vespade & Barais";
+				displayName="Snow";
+				textures[]=
+				{
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_co.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_co2.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_co3.paa",
+					"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_co4.paa"
+				};
+			};
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co.paa",
+			"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co2.paa",
+			"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co3.paa",
+			"Echo_Company_Armory\data\Vehicles\Falcon\Echo_Falcon_DES_co4.paa"
+		};
+	};
 
 	/*class Echo_Cougar: I_E_APC_tracked_03_cannon_F
 	{
@@ -16183,7 +16362,8 @@ class CfgVehicles
 					"OPTRE_60Rnd_105mm_APBC",
 					"OPTRE_60Rnd_105mm_SAPHE",
 					"OPTRE_60Rnd_105mm_HEAT",
-					"OPTRE_10Rnd_90mm_S1"
+					"OPTRE_10Rnd_90mm_S1",
+					"OPTRE_40Rnd_120mm_HE"
 				};
 			};
 		};
